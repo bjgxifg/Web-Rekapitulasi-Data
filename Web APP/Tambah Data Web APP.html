@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data Web APP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {    
+            width: 100%;
+            background-color: #3A3A3A;
+            color: white;
+            padding: 15px 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+        }
+        header h1 img {
+            border-radius: 50%;
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+        header button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #4A536E;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow-y: auto;
+        }
+        .sidebar img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .sidebar p {
+            text-align: center;
+            margin: 5px 0;
+            margin-bottom: 20px;
+        }
+        .sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #6573a4;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .sidebar button:hover {
+            background-color: #5c6a91;
+        }
+        .sidebar hr {
+            margin: 10px 0;
+            border: 1px solid #6573a4;
+            margin-bottom: 10px;
+        }
+        .sidebar nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            margin: 5px 0;
+            background-color: #6573a4;
+            text-align: center;
+        }
+        .sidebar nav a:hover {
+            background-color: #5c6a91;
+        }
+        .main-content {
+            width: 80%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .main-content .header h1 {
+            margin: 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: 0 auto;
+        }
+        .form-container label {
+            display: block;
+            width: 100%;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        .form-container input,
+        .form-container select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container .form-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-container .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .form-container .form-actions .cancel-btn {
+            background-color: #d9534f;
+            color: white;
+        }
+        .form-container .form-actions .submit-btn {
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="losschan.png" alt="Logo"> Nama WEB
+        </h1>
+        <a href="D:\VS Code\Web APP\Login Web APP.html"><button>LOGOUT</button></a>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="losschan.png" alt="Profile Picture">
+                <h2>Mahendra Putra I.</h2>
+                <p>23.01.5062</p>
+                <button>LIHAT PROFIL</button>
+            </div>
+            <hr>
+            <nav>
+                <a href="D:\VS Code\Web APP\Dashboard Web APP.html">Dashboard</a>
+                <a href="D:\VS Code\Web APP\Rekapitulasi Web APP.html">Rekapitulasi Nilai</a>
+                <a href="D:\VS Code\Web APP\Tambah Data Web APP.html">Tambah Data</a>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1><u>Input Data</u></h1>
+            </div>
+            <div class="form-container">
+                <form>
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukan Nama Mahasiswa">
+                    
+                    <label for="nim">NIM</label>
+                    <input type="text" id="nim" name="nim" placeholder="Masukan NIM Mahasiswa">
+                    
+                    <label for="mata-kuliah">Mata Kuliah</label>
+                    <select id="mata-kuliah" name="mata-kuliah">
+                        <option value="">Pilih Mata Kuliah 1</option>
+                        <option value="">Pilih Mata Kuliah 2</option>
+                        <option value="">Pilih Mata Kuliah 3</option>
+                    </select>
+                    
+                    <label for="kehadiran">Kehadiran</label>
+                    <input type="text" id="kehadiran" name="kehadiran" placeholder="Masukan Total Kehadiran">
+                    
+                    <label for="tugas">Tugas</label>
+                    <input type="text" id="tugas" name="tugas" placeholder="Masukan Total Nilai Tugas">
+                    
+                    <label for="respon">Responsi</label>
+                    <input type="text" id="respon" name="responsi" placeholder="Masukan Nilai Responsi">
+                    
+                    <label for="uts">UTS</label>
+                    <input type="text" id="uts" name="uts" placeholder="Masukan Nilai UTS">
+                    
+                    <label for="uas">UAS</label>
+                    <input type="text" id="uas" name="uas" placeholder="Masukan Nilai UAS">
+                    
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

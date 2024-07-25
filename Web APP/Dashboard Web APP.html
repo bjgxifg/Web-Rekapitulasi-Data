@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Web APP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {    
+            width: 100%;
+            background-color: #3A3A3A;
+            color: white;
+            padding: 15px 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+        }
+        header h1 img {
+            border-radius: 50%;
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+        header button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #4A536E;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: ;
+            overflow-y: auto;
+        }
+        .sidebar img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .sidebar p {
+            text-align: center;
+            margin: 5px 0;
+            margin-bottom: 20px;
+        }
+        .sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #6573a4;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .sidebar button:hover {
+            background-color: #5c6a91;
+        }
+        .sidebar hr {
+            margin: 10px 0;
+            border: 1px solid #6573a4;
+            margin-bottom: 10px;
+        }
+        .sidebar nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            margin: 5px 0;
+            background-color: #6573a4;
+            text-align: center;
+        }
+        .sidebar nav a:hover {
+            background-color: #5c6a91;
+        }
+        .main-content {
+            width: 80%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .main-content .header h1 {
+            margin: 0;
+            text-align: center;
+        }
+        .summary-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            height: 200px;
+        }
+        .left-summary {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 49%;
+        }
+        .summary-box {
+            background-color: #e0e0e0;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            flex: 1;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .summary-box:last-child {
+            margin-bottom: 0;
+        }
+        .summary-box h3 {
+            margin: 0 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid black;
+        }
+        .right-summary {
+            background-color: #e0e0e0;
+            padding: 15px;
+            box-sizing: border-box;
+            width: 49%;
+            height: calc(100%);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .right-summary h3 {
+            margin: 0 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid black;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+        .schedule-table th {
+            background-color: #6573a4;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="losschan.png" alt="Logo"> Nama WEB
+        </h1>
+        <a href="D:\VS Code\Web APP\Login Web APP.html"><button>LOGOUT</button></a>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="losschan.png" alt="Profile Picture">
+                <h2>Mahendra Putra I.</h2>
+                <p>23.01.5062</p>
+                <button>LIHAT PROFIL</button>
+            </div>
+            <hr>
+            <nav>
+                <a href="D:\VS Code\Web APP\Dashboard Web APP.html">Dashboard</a>
+                <a href="D:\VS Code\Web APP\Rekapitulasi Web APP.html">Rekapitulasi Nilai</a>
+                <a href="D:\VS Code\Web APP\Tambah Data Web APP.html">Tambah Data</a>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1><u>DASHBOARD DOSEN</u></h1>
+            </div>
+            <div class="summary-section">
+                <div class="left-summary">
+                    <div class="summary-box">
+                        <h3>Jumlah kelas yang diampu</h3>
+                        <!-- Tambah di Sini -->
+                    </div>
+                    <div class="summary-box">
+                        <h3>Jumlah mahasiswa yang diampu</h3>
+                        <!-- Tambah di Sini -->
+                    </div>
+                </div>
+                <div class="right-summary">
+                    <h3>Jadwal hari ini</h3>
+                    <!-- Tambah di Sini -->
+                </div>
+            </div>
+            <h3><u>Jadwal Perkuliahan</u></h3>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>NO</th>
+                        <th>Hari</th>
+                        <th>Waktu</th>
+                        <th>Kelas</th>
+                        <th>Ruang</th>
+                        <th>Mata Kuliah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Senin</td>
+                        <td>08:00 - 10:00</td>
+                        <td>A</td>
+                        <td>101</td>
+                        <td>Matematika</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Selasa</td>
+                        <td>10:00 - 12:00</td>
+                        <td>B</td>
+                        <td>102</td>
+                        <td>Fisika</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Rabu</td>
+                        <td>13:00 - 15:00</td>
+                        <td>C</td>
+                        <td>103</td>
+                        <td>Kimia</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Kamis</td>
+                        <td>08:00 - 10:00</td>
+                        <td>D</td>
+                        <td>104</td>
+                        <td>Biologi</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Jumat</td>
+                        <td>10:00 - 12:00</td>
+                        <td>E</td>
+                        <td>105</td>
+                        <td>Geografi</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Sabtu</td>
+                        <td>13:00 - 15:00</td>
+                        <td>F</td>
+                        <td>106</td>
+                        <td>Sejarah</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

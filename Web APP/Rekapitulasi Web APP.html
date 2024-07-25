@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekapitulasi Web APP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {    
+            width: 100%;
+            background-color: #3A3A3A;
+            color: white;
+            padding: 15px 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+        }
+        header h1 img {
+            border-radius: 50%;
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+        header button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #4A536E;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow-y: auto;
+        }
+        .sidebar img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .sidebar p {
+            text-align: center;
+            margin: 5px 0;
+            margin-bottom: 20px;
+        }
+        .sidebar button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #6573a4;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .sidebar button:hover {
+            background-color: #5c6a91;
+        }
+        .sidebar hr {
+            margin: 10px 0;
+            border: 1px solid #6573a4;
+            margin-bottom: 10px;
+        }
+        .sidebar nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            margin: 5px 0;
+            background-color: #6573a4;
+            text-align: center;
+        }
+        .sidebar nav a:hover {
+            background-color: #5c6a91;
+        }
+        .main-content {
+            width: 80%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .main-content .header h1 {
+            margin: 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f4f4f4;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .filters select {
+            flex: 1;
+            margin: 0 10px;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+        }
+
+        .table-container {
+            width: 90%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            overflow-x: auto;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+        }
+
+        th {
+            background-color: #8294BB;
+            color: black;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="losschan.png" alt="Logo"> Nama WEB
+        </h1>
+        <a href="D:\VS Code\Web APP\Login Web APP.html"><button>LOGOUT</button></a>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="losschan.png" alt="Profile Picture">
+                <h2>Mahendra Putra I.</h2>
+                <p>23.01.5062</p>
+                <button>LIHAT PROFIL</button>
+            </div>
+            <hr>
+            <nav>
+                <a href="D:\VS Code\Web APP\Dashboard Web APP.html">Dashboard</a>
+                <a href="D:\VS Code\Web APP\Rekapitulasi Web APP.html">Rekapitulasi Nilai</a>
+                <a href="D:\VS Code\Web APP\Tambah Data Web APP.html">Tambah Data</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1><u>Rekapitulasi Nilai</u></h1>
+            </div>
+            <div class="filters">
+                <select>
+                    <option value="">Tahun Ajaran</option>
+                </select>        
+                <select>
+                    <option value="">Semester</option>
+                </select>
+                <select>
+                    <option value="">Mata Kuliah</option>
+                </select>
+                <select>
+                    <option value="">Kelas</option>
+                </select>
+            </div>
+    
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Kehadiran</th>
+                            <th>Tugas</th>
+                            <th>Responsi</th>
+                            <th>UTS</th>
+                            <th>UAS</th>
+                            <th>Nilai Akhir</th>
+                            <th>Kategori</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                         <tr>
+                            <td>14</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                         <tr>
+                            <td>15</td>
+                            <td>23.01.5062</td>
+                            <td>Mahendra</td>
+                            <td>80</td>
+                            <td>85</td>
+                            <td>90</td>
+                            <td>88</td>
+                            <td>92</td>
+                            <td>89</td>
+                            <td>A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
